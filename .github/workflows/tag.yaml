@@ -58,7 +58,7 @@ jobs:
         with:
           images: |
             adamab/filebrowser
-            ghcr.io/gtsteffaniak/filebrowser
+            ghcr.io/adamab48/filebrowser
       - name: Modify tags (strip 'v' and add 'beta'/'stable' if needed)
         id: modify-json
         run: |
@@ -71,15 +71,15 @@ jobs:
             if any(.tags[]; test("beta")) then
               .tags += [
                 "adamab/filebrowser:beta",
-                "ghcr.io/gtsteffaniak/filebrowser:beta"
+                "ghcr.io/adamab48/filebrowser:beta"
               ]
             else . end |
             if any(.tags[]; test("stable")) then
               .tags += [
                 "adamab/filebrowser:stable",
-                "ghcr.io/gtsteffaniak/filebrowser:stable",
+                "ghcr.io/adamab48/filebrowser:stable",
                 "adamab/filebrowser:latest",
-                "ghcr.io/gtsteffaniak/filebrowser:latest"
+                "ghcr.io/adamab48/filebrowser:latest"
               ]
             else . end
           ')
@@ -125,7 +125,7 @@ jobs:
         with:
           images: |
             adamab/filebrowser
-            ghcr.io/gtsteffaniak/filebrowser
+            ghcr.io/adamab48/filebrowser
       - name: Modify tags (strip 'v' and add 'slim' if needed)
         id: modify-json-slim
         run: |
@@ -139,13 +139,13 @@ jobs:
             if any(.tags[]; test("beta")) then
               .tags += [
                 "adamab/filebrowser:beta-slim",
-                "ghcr.io/gtsteffaniak/filebrowser:beta-slim"
+                "ghcr.io/adamab48/filebrowser:beta-slim"
               ]
             else . end |
             if any(.tags[]; test("stable")) then
               .tags += [
                 "adamab/filebrowser:stable-slim",
-                "ghcr.io/gtsteffaniak/filebrowser:stable-slim"
+                "ghcr.io/adamab48/filebrowser:stable-slim"
               ]
             else . end
           ')
