@@ -57,7 +57,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            gtstef/filebrowser
+            adamab/filebrowser
             ghcr.io/gtsteffaniak/filebrowser
       - name: Modify tags (strip 'v' and add 'beta'/'stable' if needed)
         id: modify-json
@@ -70,15 +70,15 @@ jobs:
             ) |
             if any(.tags[]; test("beta")) then
               .tags += [
-                "gtstef/filebrowser:beta",
+                "adamab/filebrowser:beta",
                 "ghcr.io/gtsteffaniak/filebrowser:beta"
               ]
             else . end |
             if any(.tags[]; test("stable")) then
               .tags += [
-                "gtstef/filebrowser:stable",
+                "adamab/filebrowser:stable",
                 "ghcr.io/gtsteffaniak/filebrowser:stable",
-                "gtstef/filebrowser:latest",
+                "adamab/filebrowser:latest",
                 "ghcr.io/gtsteffaniak/filebrowser:latest"
               ]
             else . end
@@ -124,7 +124,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            gtstef/filebrowser
+            adamab/filebrowser
             ghcr.io/gtsteffaniak/filebrowser
       - name: Modify tags (strip 'v' and add 'slim' if needed)
         id: modify-json-slim
@@ -138,13 +138,13 @@ jobs:
             ) |
             if any(.tags[]; test("beta")) then
               .tags += [
-                "gtstef/filebrowser:beta-slim",
+                "adamab/filebrowser:beta-slim",
                 "ghcr.io/gtsteffaniak/filebrowser:beta-slim"
               ]
             else . end |
             if any(.tags[]; test("stable")) then
               .tags += [
-                "gtstef/filebrowser:stable-slim",
+                "adamab/filebrowser:stable-slim",
                 "ghcr.io/gtsteffaniak/filebrowser:stable-slim"
               ]
             else . end
